@@ -8,11 +8,11 @@ module.exports =
     {
         
         //to get the current date in the format dd-mm-yyyy
-        var today = new Date();
-        var dd = String(today.getDate()).padStart(2, '0');
-        var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-        var yyyy = today.getFullYear();
-        today = dd+"-"+mm+"-"+yyyy;
+        // var today = new Date();
+        // var dd = String(today.getDate()+1).padStart(2, '0');
+        // var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        // var yyyy = today.getFullYear();
+        today = "31-05-2021";
 
         //sending http request to fetch slots available today in all the centres in the pincode given by the user
         axios
