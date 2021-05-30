@@ -1,0 +1,81 @@
+#below_nav
+{
+    opacity:1;
+}
+body
+{
+    background-color: rgb(38, 37, 105);   
+}
+.fs-1
+{
+    text-align: center;
+    color:azure;
+}
+.fs-5
+{
+    text-align: center;
+    color:yellow;
+}
+#intro,#command
+{
+    padding: 30px;
+    padding-top: 3.5cm;
+    color:antiquewhite;
+}
+#demo
+{
+    color:antiquewhite;
+    padding-top: 3.5cm;
+}
+#link
+{
+    text-align: center;
+}
+#pic
+{
+    text-align: center;
+    padding: 20px;
+}
+#s_logo
+{
+    border-radius: 50%;
+}
+#logo
+{
+    width:200px;
+    height:200px;
+    border-radius: 50%;
+}
+
+table, th, td
+{
+    border: 1px solid white;
+    color: gold;
+    padding:10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.row
+{
+    display: flex;
+}
+
+.column
+{
+    flex: 10%;
+    padding: 5px;
+}
+#sp
+{
+    padding-left: 30px;
+}
+#bottom
+{
+    height:80px;
+    margin-top: 30px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-top:10px;
+    text-align: center;
+    background-color: gold;
+}
