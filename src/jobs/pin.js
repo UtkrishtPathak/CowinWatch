@@ -17,7 +17,12 @@ module.exports =
         //sending http request to fetch slots available today in all the centres in the pincode given by the user
         axios
         .get(`https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByPin?pincode=${args[0]}&date=${today}`,
-        { headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36 Edg/90.0.818.51'}})
+        { headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36 Edg/90.0.818.51'},
+        proxy: {
+            host: '103.44.50.121',
+            port: '4145'
+        },
+        })
         
         .then(function(response)  //response recieved from the "GET" request sent
         {
