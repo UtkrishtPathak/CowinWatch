@@ -18,9 +18,8 @@ const axios         = require("axios"),
       subscribe     = require("./jobs/subscribe.js"),
       update        = require("./jobs/update.js");
       auto          = require("./jobs/automatic.js");
-      db_url        = process.env.DB_URL;
 
-mongoose.connect("\""+db_url+"\"", {
+mongoose.connect(process.env.DB_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false,
