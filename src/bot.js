@@ -174,7 +174,9 @@ cron.schedule("0 0 */1 * * *", () => {
 //logging in the client
 client.login(process.env.DISCORD_BOT_TOKEN);
 
-app.listen(8888, function()
+const port = process.env.PORT||8888;
+
+app.listen(port, function()
 {
-    console.log("running on port 8888");
+    console.log(`running on port ${port}`);
 })
