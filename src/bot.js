@@ -21,7 +21,7 @@ const axios         = require("axios"),
       db_url        = process.env.DB_URL;
       //'mongodb://localhost/bot'
 //database connection
-mongoose.connect("mongodb://localhost/bot", {
+mongoose.connect("mongodb://localhost:27017/bot", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false,
