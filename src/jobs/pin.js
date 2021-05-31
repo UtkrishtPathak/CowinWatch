@@ -19,8 +19,8 @@ module.exports =
         .get(`https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByPin?pincode=${args[0]}&date=${today}`,
         { headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36 Edg/90.0.818.51'},
         proxy: {
-            host: '103.216.82.37',
-            port: 6666
+            host: '116.73.14.16',
+            port: 8080
         },
         })
         
