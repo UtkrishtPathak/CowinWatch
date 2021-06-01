@@ -22,23 +22,22 @@ module.exports =
                 today = dd+"-"+mm+"-"+yyyy;
                 
                  //sending http request to fetch slots available today in all the centres in the district of each user stored from the database
-                axios
-                .get(`https://cowin.rabeeh.me/api/v2/appointment/sessions/public/findByDistrict?district_id=${dist_id}&date=${today}`,
-                    { headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36 Edg/90.0.818.51'}})
+                axios.get(`https://cowin.rabeeh.me/api/v2/appointment/sessions/public/findByDistrict?district_id=${dist_id}&date=${today}`,
+                { headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36 Edg/90.0.818.51'}})
                 .then(function (response) //response recieved from the "GET" request sent
                     {
-                        var centres=response.data.sessions;  //storing the centres data
+                        console.log(response);  //storing the centres data
                         var n=0;  //to check whether no centres have any available capacity
 
                         //A forEach loop for getting individual centres from the given list of centres
-                        centres.forEach((centre) => 
-                        {
-                            if(centre.available_capacity>0)
-                            {
-                                slots_embed.execute_com(message,centre,today,Discord);
-                                n=1;  //if any centre has non-zero slots available, make it 1
-                            }
-                        });
+                        // centres.forEach((centre) => 
+                        // {
+                        //     if(centre.available_capacity>0)
+                        //     {
+                        //         slots_embed.execute_com(message,centre,today,Discord);
+                        //         n=1;  //if any centre has non-zero slots available, make it 1
+                        //     }
+                        // });
                         
                         if(n==0)
                             message.author.send("No slots avialable")

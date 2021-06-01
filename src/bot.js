@@ -16,7 +16,9 @@ const axios         = require("axios"),
       register      = require("./jobs/register.js"),
       pin           = require("./jobs/pin.js"),
       subscribe     = require("./jobs/subscribe.js"),
-      update        = require("./jobs/update.js");
+      districts     = require("./jobs/districts.js"),
+      update        = require("./jobs/update.js"),
+      states        = require("./jobs/states.js"),
       auto          = require("./jobs/automatic.js");
 
 mongoose.connect(process.env.DB_URL, {
@@ -116,7 +118,14 @@ client.on("message",(message) =>
         {
             help.execute(message,Discord);
         }
-
+        if(command==="states")
+        {
+            states.execute();
+        }
+        if(command==="districts")
+        {
+            districts.execute();
+        }
         if(command==="register")
         {
             register.execute(message,args);
@@ -139,7 +148,7 @@ client.on("message",(message) =>
 
         if(command=="pin")
         {
-            pin.execute(message,args,axios,Discord);
+            pin.execute(message,args,Discord);
         }
 
         if(command=="on"||command=="off")
@@ -168,7 +177,7 @@ client.on("message",(message) =>
 
 //scheduling houlry notifications for slots availability
 cron.schedule("0 0 */1 * * *", () => {
-    auto.execute(axios,client,Discord);
+    auto.execute(client,Discord);
 })
 
 //logging in the client

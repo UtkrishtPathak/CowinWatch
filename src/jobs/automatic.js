@@ -2,11 +2,12 @@
 // importing the required modules
 const User          = require("../schema/User_schema.js"),
       slots_embed   = require("../embed/slots_embed.js"),
-      Subs          = require("../schema/Subscribe_schema");
+      Subs          = require("../schema/Subscribe_schema"),
+      axios         = require("axios");
 
 module.exports =
 {
-    execute(axios,client,Discord)
+    execute(client,Discord)
     {
         console.log("running"); //to check the execution status
 
