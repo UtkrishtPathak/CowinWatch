@@ -24,7 +24,7 @@ module.exports =
         {
             var centres=response.data.sessions;  //storing the centres data
             var n=0;  //to check whether no centres have any available capacity
-
+            console.log(centres);
             //A forEach loop for getting individual centres from the given list of centres
             centres.forEach((centre) =>
             {
