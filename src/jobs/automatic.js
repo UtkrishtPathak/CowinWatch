@@ -42,7 +42,7 @@ module.exports =
                             
                             .then(function (response) //response recieved from the "GET" request sent
                             {
-                                var centres=response.data.sessions; //storing the centres data
+                                var centres=response.data.data.sessions; //storing the centres data
                                 var n=0; //to check whether no centres have any available capacity
 
                                 //A forEach loop for getting individual centres from the given list of centres
