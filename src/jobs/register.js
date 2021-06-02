@@ -27,8 +27,9 @@ module.exports =
         //checking whether the district provided by the user is a valid district or not
         Districts.find({district_name:args[1]}, function(err,docs)
         {
-            if(!docs.length)  //if record is empty, then the district name was invalid
+            if(docs.length==0)  //if record is empty, then the district name was invalid
             {
+                console.log(docs);
                 message.author.send("Incorrect district details");
                 return;
             }
