@@ -32,11 +32,6 @@ REGISTRATION REQUIRED|
 | *on	| To subscribe to hourly updates of available slots (REGISTRATION REQUIRED)|
 | *off	| 	To unsubscribe from hourly updates of available slots (REGISTRATION REQUIRED)
 
-#Installation
-
-Clone this repository.
-
-
 # About Me
 I am just a student trying to learn the technicalities of web development. Reach out to me if any doubt occurs. Cheers!!!
 
