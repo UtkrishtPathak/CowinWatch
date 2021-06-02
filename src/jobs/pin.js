@@ -37,7 +37,7 @@ module.exports =
                 //checking for available slots in individual centres
                 if(centre.available_capacity>0)
                 {
-                    slots_embed.execute_com(message,centre,today,Discord);
+                    slots_embed.execute_com(message,centre,ind_time,Discord);
                     n=1;  //if any centre has non-zero slots available, make it 1
                 }
             });
