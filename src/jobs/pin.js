@@ -44,7 +44,7 @@ module.exports =
 
             //when no centres have available slots
             if(n==0)
-                message.author.send("No slots available")
+                message.author.send("NO SLOTS AVAILABLE.")
         })
         
         .catch(function(error)  //if any error occurs while sending http request or recieving the response

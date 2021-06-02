@@ -170,7 +170,7 @@ client.on("message",(message) =>
         }
         else
         {
-           message.channel.send(`<@${message.author.id}>All the conversations between us will happen in the DMs. Press *start if you haven't registered yet. See you there.`)
+           message.channel.send(`<@${message.author.id}>All the commands work in the DMs. Press *start to register if you haven't registered yet and start conversing in the DMs. See you there.`)
         }
     }
 });
