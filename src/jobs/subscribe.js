@@ -23,7 +23,7 @@ module.exports =
                         else //if record doesn't exist
                         {
                             //creating a new sub record with thier names
-                            var sub = new Subs({name:message.author.username});
+                            var sub = new Subs({name:message.author.tag});
                     
                             //saving the sub in SUBS collection
                             sub.save(function(err,doc)
@@ -43,7 +43,7 @@ module.exports =
                         if(docs.length) //if record exists
                         {
                             //deleting that record form SUBS collection
-                            Subs.deleteOne({name:message.author.username}, function(err)
+                            Subs.deleteOne({name:message.author.tag}, function(err)
                             {
                                 if(err) console.log(err);
                                 else
