@@ -62,7 +62,7 @@ client.on("guildCreate", guild =>
               if (channel.permissionsFor(client.user).has("SEND_MESSAGES") === true)
               {
                 channel.send("Hola! I am CowinWatch. I give you updates regarding slot availability in cowin vaccinations.");
-                channel.send("Press *help to see all my commands. Press *start to negin the registration process in your DMs.");
+                channel.send("Press *help to see all my commands. Press *start to begin the registration process in your DMs.");
                 channel.send("All conversations between you and me will take place in DMs, so if you have disabled it from recieving messages, kindly enable it.");
                 found = 1;
               }
