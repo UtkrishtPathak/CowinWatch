@@ -15,9 +15,9 @@ module.exports =
         let ind_time = obj.format(today);
         console.log(ind_time);
         var d=ind_time.split("/");
-        var dd = String(d[0]).padStart(2, '0');
-        var mm = String(d[1]).padStart(2, '0'); //January is 0!
-        var yyyy = "20"+String(d[2]);
+        var mm = String(d[0]).padStart(2, '0');
+        var dd = String(d[1]).padStart(2, '0');
+        var yyyy = String(d[2]);
         ind_time = dd+"-"+mm+"-"+yyyy;
         console.log(ind_time);
         
