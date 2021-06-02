@@ -9,7 +9,7 @@ This is where CowinWatch comes to play. All you need to do is register on it wit
 
 Sounds easy enough. Try it.
 
-Visit the website for getting the invite link [CowinWatch](https://cowinwatch.herokuapp.com/)
+Visit the website for getting the invite link to this bot:- [CowinWatch](https://cowinwatch.herokuapp.com/)
 
 # Features
 1. User registration with age and district.
@@ -31,6 +31,11 @@ REGISTRATION REQUIRED|
 | *slots		| To manually get the slots of the selected district (REGISTRATION REQUIRED)<br>User can give this command in the DM to get slots availability.
 | *on	| To subscribe to hourly updates of available slots (REGISTRATION REQUIRED)|
 | *off	| 	To unsubscribe from hourly updates of available slots (REGISTRATION REQUIRED)
+
+#Installation
+
+Clone this repository.
+
 
 # About Me
 I am just a student trying to learn the technicalities of web development. Reach out to me if any doubt occurs. Cheers!!!
