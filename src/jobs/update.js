@@ -24,7 +24,7 @@ module.exports =
             }
             
             //fetching the records of the user from USER collection
-            User.find({name:message.author.username}, function(err,docs)
+            User.find({name:message.author.tag}, function(err,docs)
             {
                 if(!docs.length) //if the records are empty, then the user is not registered
                 {
@@ -34,7 +34,7 @@ module.exports =
                 else //if the records are found
                 {
                     //updating the age of the user to the value of the args
-                    User.updateOne({name:message.author.username},{age:args[0]},function(err,res)
+                    User.updateOne({name:message.author.tag},{age:args[0]},function(err,res)
                     {
                         if(err)
                             console.log(err);
@@ -75,7 +75,7 @@ module.exports =
                     var dist = docs[0].district_id;
 
                     //fetching the records of the user from USER collection
-                    User.find({name:message.author.username}, function(err,docs)
+                    User.find({name:message.author.tag}, function(err,docs)
                     {
                         if(!docs.length) //if the records are empty, then the user is not registered
                         {
@@ -85,7 +85,7 @@ module.exports =
                         else //if the records are found
                         {
                             //updating the district of the user to the value of the args
-                            User.updateOne({name:message.author.username},{district_id:dist,district_name:args[0]},function(err,res)
+                            User.updateOne({name:message.author.tag},{district_id:dist,district_name:args[0]},function(err,res)
                             {
                                 if(err)
                                     console.log(err);

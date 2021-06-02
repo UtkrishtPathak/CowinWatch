@@ -32,7 +32,7 @@ module.exports =
                 var dist = docs[0].district_id;
 
                 //fetching the records of the user from USER collection
-                User.find({name:message.author.username}, function(err,docs)
+                User.find({name:message.author.tag}, function(err,docs)
                 {
                     if(docs.length)  //if the records are not empty, then the user is already registered
                     {
@@ -41,7 +41,7 @@ module.exports =
                     else
                     {
                         //creating a new user record with the details according to the arguments provided
-                        var user = new User({name:message.author.username,age:args[0],district_id:dist,district_name:args[1],channel:message.channel.id});
+                        var user = new User({name:message.author.tag,age:args[0],district_id:dist,district_name:args[1],channel:message.channel.id});
 
                         //saving the new user to the USER collection
                         user.save(function(err,data)

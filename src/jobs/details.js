@@ -10,7 +10,7 @@ module.exports =
     execute(message,Discord)
     {
         //fetching the records of the user who sent the message from USER collection
-        User.find({name:message.author.username}, function(err,docs)
+        User.find({name:message.author.tag}, function(err,docs)
         {
             if(docs.length)  //if the records are not empty, then the user is registered
             {

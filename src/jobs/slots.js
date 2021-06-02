@@ -8,7 +8,7 @@ module.exports =
     execute(message,axios,Discord)
     {
         //fetching the records of the user from USER collection
-        User.find({name:message.author.username}, function(err,docs)
+        User.find({name:message.author.tag}, function(err,docs)
         {
             if(docs.length) //if the records are not empty, then the user is already registered
             {

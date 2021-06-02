@@ -21,6 +21,7 @@ const axios         = require("axios"),
       states        = require("./jobs/states.js"),
       auto          = require("./jobs/automatic.js");
 
+//database connection
 mongoose.connect(process.env.DB_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -89,7 +90,7 @@ client.on("guildMemberAdd",member =>
 client.on("guildMemberRemove",(member) => 
 {
     //removing data of members from the database
-    User.deleteOne({name:member.user.username},function(err)
+    User.deleteOne({name:member.user.tag},function(err)
     {
         if(err)
             console.log(err);

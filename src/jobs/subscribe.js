@@ -7,14 +7,14 @@ module.exports =
 {
     execute(message,command)
     {
-        Users.find({name:message.author.username}, function(err,docs)
+        Users.find({name:message.author.tag}, function(err,docs)
         {
             if(docs.length)
             {
                 if(command=="on") //when command given is on
                 {
                     //checking for user records in SUBS collection
-                    Subs.find({name:message.author.username}, function(err,docs)
+                    Subs.find({name:message.author.tag}, function(err,docs)
                     {
                         if(docs.length) //if record exists
                         {
@@ -38,7 +38,7 @@ module.exports =
 
                 else
                 {
-                    Subs.find({name:message.author.username}, function(err,docs)
+                    Subs.find({name:message.author.tag}, function(err,docs)
                     {
                         if(docs.length) //if record exists
                         {
@@ -62,6 +62,6 @@ module.exports =
             {
                 message.channel.send("User not yet registered.");
             }
-        })   
+        })    
     }
 }

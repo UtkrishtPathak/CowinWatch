@@ -8,7 +8,7 @@ module.exports =
     {
         /*Checking if the user is already registered(i.e, already provided his/her/their details)
         by fetching records of the user from the "User" collection */
-        User.find({name:message.author.username}, function(err,docs) {
+        User.find({name:message.author.tag}, function(err,docs) {
             if(docs.length) //if the record fetched is non-empty, it implies user is registered
             {
                 message.channel.send(`<@${message.author.id}> You are already registered. You must be recieving all the slots details in your DM. Please check.`);
