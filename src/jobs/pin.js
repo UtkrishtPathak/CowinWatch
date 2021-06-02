@@ -14,9 +14,10 @@ module.exports =
         let obj = new Intl.DateTimeFormat('en-US', {timeZone: "Asia/Kolkata"});
         let ind_time = obj.format(today);
         console.log(ind_time);
-        var dd = String(ind_time.getDate()).padStart(2, '0');
-        var mm = String(ind_time.getMonth() + 1).padStart(2, '0'); //January is 0!
-        var yyyy = ind_time.getFullYear();
+        var d=ind_time.split("/");
+        var dd = String(d[0]).padStart(2, '0');
+        var mm = String(d[1]).padStart(2, '0'); //January is 0!
+        var yyyy = "20"+String(d[2]);
         ind_time = dd+"-"+mm+"-"+yyyy;
         console.log(ind_time);
         
