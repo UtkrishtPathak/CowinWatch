@@ -22,6 +22,7 @@ module.exports =
         //converting the args(district name) provided by the user to Camelcase
         args[1]=args[1].toLowerCase();
         args[1]=args[1].charAt(0).toUpperCase()+args[1].slice(1);
+        console.log(args[1]);
 
         //checking whether the district provided by the user is a valid district or not
         Districts.find({district_name:args[1]}, function(err,docs)
