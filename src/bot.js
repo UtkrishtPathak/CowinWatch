@@ -176,10 +176,16 @@ client.on("message",(message) =>
     }
 });
 
-//scheduling houlry notifications for slots availability
+//scheduling hourly notifications for slots availability
 cron.schedule("0 0 */1 * * *", () => {
     auto.execute(client,Discord);
 })
+
+//Keeping the bot alive on heroku
+cron.schedule("0 */3 * * * *", () => {
+    console.log("Keeping the bot alive");
+})
+
 
 //logging in the client
 client.login(process.env.DISCORD_BOT_TOKEN);
