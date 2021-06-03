@@ -179,11 +179,21 @@ client.on("message",(message) =>
 //scheduling hourly notifications for slots availability
 cron.schedule("0 0 */1 * * *", () => {
     auto.execute(client,Discord);
-})
+});
+
+
 
 //Keeping the bot alive on heroku
 cron.schedule("0 */3 * * * *", () => {
-    console.log("Keeping the bot alive");
+    axios.get("https://cowinwatch.herokuapp.com/")
+    .then(function(response)
+    {
+        console.log("Keeping the bot alive.");
+    })
+    .catch(function(error)
+    {
+        console.log("Error\n"+error);
+    })
 })
 
 
