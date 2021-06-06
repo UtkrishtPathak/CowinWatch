@@ -14,7 +14,7 @@ module.exports =
             {
                 dist_id = docs[0].district_id; //storing the district_id
                 
-                to get the current date in the format dd-mm-yyyy from US time to India time
+                //to get the current date in the format dd-mm-yyyy from US time to India time
                 var today = new Date();
                 console.log(today);
                 let obj = new Intl.DateTimeFormat('en-US', {timeZone: "Asia/Kolkata"});
