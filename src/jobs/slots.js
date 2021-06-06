@@ -41,6 +41,7 @@ module.exports =
                 .then(function (response) //response recieved from the "GET" request sent
                     {
                         
+                        console.log(response.data);
                         // centres=response.data.data.sessions;  //storing the centres data
                         // console.log(response.data.data.sessions);
                         // var n=0;  //to check whether no centres have any available capacity
