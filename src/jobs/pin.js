@@ -31,7 +31,6 @@ module.exports =
             //A forEach loop for getting individual centres from the given list of centres
             centres.forEach((centre) =>
             {
-                console.log(centre);
                 //checking for available slots in individual centres
                 if(centre.sessions[0].available_capacity>0)
                 {
