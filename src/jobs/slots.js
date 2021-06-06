@@ -41,27 +41,28 @@ module.exports =
                 .then(function (response) //response recieved from the "GET" request sent
                     {
                         
-                        console.log(response.data);
-                        // centres=response.data.data.sessions;  //storing the centres data
-                        // console.log(response.data.data.sessions);
-                        // var n=0;  //to check whether no centres have any available capacity
-                        // //A forEach loop for getting individual centres from the given list of centres
-                        // centres.forEach((centre) => 
-                        // {
-                        //     if(centre.available_capacity>0 && docs[0].age>=centre.min_age_limit)
-                        //     {
-                        //         console.log(centre);
-                        //         slots_embed.execute_com(message,centre,ind_time,Discord);
-                        //         n=1;  //if any centre has non-zero slots available, make it 1
-                        //     }
-                        // });
+                        //console.log(response.data);
+                        centres=response.data.centers;
+                        centres=response.data.centers;  //storing the centres data
+                        var n=0;  //to check whether no centres have any available capacity
+
+                        //A forEach loop for getting individual centres from the given list of centres
+                        centres.forEach((centre) => 
+                        {
+                            if(centre.sessions[0].available_capacity>0 && docs[0].age>=centre.sessions[0].min_age_limit)
+                            {
+                                
+                                slots_embed.execute_com(message,centre,ind_time,Discord);
+                                n=1;  //if any centre has non-zero slots available, make it 1
+                            }
+                        });
                         
-                        // if(n==0)
-                        //     message.author.send("NO SLOTS AVAILABLE.")
-                        //     .catch(error =>
-                        //     {
-                        //         message.channel.send(`<@${message.author.username} You have disabled the settings to accept DMs. Kindly enable it to use my features`);
-                        //     });
+                        if(n==0)
+                            message.author.send("NO SLOTS AVAILABLE.")
+                            .catch(error =>
+                            {
+                                message.channel.send(`<@${message.author.username} You have disabled the settings to accept DMs. Kindly enable it to use my features`);
+                            });
                     })
                 .catch(function(error) 
                     {
