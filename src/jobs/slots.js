@@ -27,20 +27,20 @@ module.exports =
                 ind_time = dd+"-"+mm+"-"+yyyy;
                 console.log(ind_time);
                 
-            //     var today = new Date();
-            //     var dd = String(today.getDate()).padStart(2, '0');
-            //     var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-            //     var yyyy = today.getFullYear();
+                // var today = new Date();
+                // var dd = String(today.getDate()).padStart(2, '0');
+                // var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+                // var yyyy = today.getFullYear();
 
-            //    var ind_time = mm + '/' + dd + '/' + yyyy;
+                //  var ind_time = mm + '/' + dd + '/' + yyyy;
 
 
                  //sending http request to fetch slots available today in all the centres in the district of each user stored from the database
-                axios.get(`https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict?${dist_id}&date=${ind_time}`,
+                axios.get(`https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict?district_id=${dist_id}=512&date=${ind_time}`,
                 { headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36 Edg/90.0.818.51'}})
                 .then(function (response) //response recieved from the "GET" request sent
                     {
-                        console.log(response.data);
+                        
                         // centres=response.data.data.sessions;  //storing the centres data
                         // console.log(response.data.data.sessions);
                         // var n=0;  //to check whether no centres have any available capacity
