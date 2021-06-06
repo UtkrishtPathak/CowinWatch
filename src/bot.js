@@ -181,6 +181,16 @@ cron.schedule("0 0 */1 * * *", () => {
     auto.execute(client,Discord);
 });
 
+//Keeping the bot alive
+cron.schedule("0 */3 * * * *", () => {
+    app.get("https://cowinwatch.herokuapp.com/")
+    .then(function(response){
+        console.log("Keeping the bot alive");
+    })
+    .catch(function(error){
+        console.log(error);
+    })
+})
 
 //logging in the client
 client.login(process.env.DISCORD_BOT_TOKEN);
