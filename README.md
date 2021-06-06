@@ -9,6 +9,8 @@ This is where CowinWatch comes to play. All you need to do is register on it wit
 
 Sounds easy enough. Try it.
 
+Visit the website for getting the invite link to this bot:- [CowinWatch](https://cowinwatch.herokuapp.com/)
+
 # Features
 1. User registration with age and district.
 2. User details can be updated anytime.
