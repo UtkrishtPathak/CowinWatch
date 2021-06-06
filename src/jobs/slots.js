@@ -14,15 +14,12 @@ module.exports =
             {
                 dist_id = docs[0].district_id; //storing the district_id
                 
-                //to get the current date in the format dd-mm-yyyy from US time to India time
+                //to get the current date in the format dd-mm-yyyy
                 var today = new Date();
-                let obj = new Intl.DateTimeFormat('en-US', {timeZone: "Asia/Kolkata"});
-                let ind_time = obj.format(today);
-                var d=ind_time.split("/");
-                var mm = String(d[0]).padStart(2, '0');
-                var dd = String(d[1]).padStart(2, '0');
-                var yyyy = String(d[2]);
-                ind_time = dd+"-"+mm+"-"+yyyy;
+                var dd = String(today.getDate()).padStart(2, '0');
+                var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+                var yyyy = today.getFullYear();
+                var ind_time = mm + '/' + dd + '/' + yyyy;
                 
                  //sending http request to fetch slots available today in all the centres in the district of each user stored from the database
                 axios.get(`https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?district_id=${dist_id}&date=${ind_time}`,

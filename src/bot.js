@@ -182,21 +182,6 @@ cron.schedule("0 0 */1 * * *", () => {
 });
 
 
-
-//Keeping the bot alive on heroku
-cron.schedule("0 */3 * * * *", () => {
-    axios.get("https://cowinwatch.herokuapp.com/")
-    .then(function(response)
-    {
-        console.log("Keeping the bot alive.");
-    })
-    .catch(function(error)
-    {
-        console.log("Error\n"+error);
-    })
-})
-
-
 //logging in the client
 client.login(process.env.DISCORD_BOT_TOKEN);
 
