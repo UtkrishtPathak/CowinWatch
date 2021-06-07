@@ -33,19 +33,15 @@ module.exports =
                 value:"For eg. *upd Thrissur\n This changes the district of user to Thrissur"
             },
             {
-                name:"7. *pin <pincode> - to get vaccination centres on basis of PINCODE (REGISTRATION NOT REQUIRED)",
-                value:"For eg. *pin 6820022\n Gives the slots available in centres located in this PINCODE"
-            },
-            {
-                name:"8. *slots - gives the slots of the selected district (REGISTRATION REQUIRED)",
+                name:"7. *slots - gives the slots of the selected district (REGISTRATION REQUIRED)",
                 value:"User can give this command to get slots availability in the DM"
             },
             {
-                name:"9. *on - subscribes you to hourly updates of available slots",
+                name:"8. *on - subscribes you to hourly updates of available slots",
                 value:"REGISTRATION REQUIRED"
             },
             {
-                name:"10. *off - unsubscribes you from recieving hourly updates of available slots",
+                name:"9. *off - unsubscribes you from recieving hourly updates of available slots",
                 value:"REGISTRATION REQUIRED"
             }
             

@@ -147,11 +147,6 @@ client.on("message",(message) =>
             slots.execute(message,axios,Discord);
         }
 
-        if(command=="pin")
-        {
-            pin.execute(message,args,Discord);
-        }
-
         if(command=="on"||command=="off")
         {
             subscribe.execute(message,command);
@@ -183,7 +178,7 @@ cron.schedule("0 0 */1 * * *", () => {
 
 //Keeping the bot alive
 cron.schedule("0 */3 * * * *", () => {
-    app.get("https://cowinwatch.herokuapp.com/")
+    axios.get("https://cowinwatch.herokuapp.com/")
     .then(function(response){
         console.log("Keeping the bot alive");
     })
