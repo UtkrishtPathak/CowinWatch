@@ -15,7 +15,6 @@ Visit the website for getting the invite link to this bot:- [CowinWatch](https:/
 1. User registration with age and district.
 2. User details can be updated anytime.
 3. User can subscribe or unsubscribe to hourly notifications about slots availability.
-4. User can check for slots on basis of a pin.
 
 # Commands
 | Commands      | Use |
@@ -27,7 +26,6 @@ Visit the website for getting the invite link to this bot:- [CowinWatch](https:/
 REGISTRATION REQUIRED|
 | *upd `<age>`  | To update a user's age (REGISTRATION REQUIRED)<br>For eg. *upd 45<br>This changes the age of user to 45|
 | *upd `<district>`  | To update a user's district (REGISTRATION REQUIRED).<br>For eg. *upd Thrissur<br>This changes the district of user to Thrissur
-| *pin `<pincode>`  | To get vaccination centres on basis of PINCODE (REGISTRATION NOT REQUIRED)<br>For eg. *pin 6820022<br>Gives the slots available in centres located in this PINCODE
 | *slots		| To manually get the slots of the selected district (REGISTRATION REQUIRED)<br>User can give this command in the DM to get slots availability.
 | *on	| To subscribe to hourly updates of available slots (REGISTRATION REQUIRED)|
 | *off	| 	To unsubscribe from hourly updates of available slots (REGISTRATION REQUIRED)
