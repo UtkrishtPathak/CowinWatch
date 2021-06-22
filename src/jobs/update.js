@@ -52,18 +52,19 @@ module.exports =
             /*If the number is not a valid number, which means the user has not entered a number but a district
             which means that the user eants to update his.her/their district*/
             
-            if(args.length!=1)  //checking whether correct no. of arguments was provide or not
-            {
-                message.author.send("Incorrect number of parameters. Maybe some extra space is there. Check and try again");
-                return;
-            }
-            
+            var d="";
+        
             //converting the args(district name) provided by the user to Camelcase
-            args[0]=args[0].toLowerCase();
-            args[0]=args[0].charAt(0).toUpperCase()+args[0].slice(1);
+            for(var i=0;i<args.length;i++)
+            {
+                args[i]=args[i].toLowerCase();
+                args[i]=args[i].charAt(0).toUpperCase()+args[i].slice(1);
+                d=d+args[i]+" ";
+            }
+            d=d.trim();
 
             //checking whether the district provided by the user is a valid district or not
-            Districts.find({district_name:args[0]}, function(err,docs)
+            Districts.find({district_name:d}, function(err,docs)
             {
                 if(!docs.length) //if record is empty, then the district name was invalid
                 {
@@ -85,7 +86,7 @@ module.exports =
                         else //if the records are found
                         {
                             //updating the district of the user to the value of the args
-                            User.updateOne({name:message.author.tag},{district_id:dist,district_name:args[0]},function(err,res)
+                            User.updateOne({name:message.author.tag},{district_id:dist,district_name:d},function(err,res)
                             {
                                 if(err)
                                     console.log(err);

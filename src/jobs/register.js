@@ -7,25 +7,26 @@ module.exports =
 {
     execute(message,args)
     {
-        if(args.length!=2)  //checking whether correct no. of arguments was provide or not
-        {
-            message.author.send("Incorrect number of parameters. Maybe some extra space is there. Check and try again")
-            return;
-        }
 
         if(!(args[0]>=18 && args[0]<150))  //checking if the age is in valid range or not
         {
             message.author.send("Incorrect value of age. Please provide correct age.");
             return;
         }
+
+        var d="";
         
         //converting the args(district name) provided by the user to Camelcase
-        args[1]=args[1].toLowerCase();
-        args[1]=args[1].charAt(0).toUpperCase()+args[1].slice(1);
-        console.log(args[1]);
-
+        for(var i=1;i<args.length;i++)
+        {
+            args[i]=args[i].toLowerCase();
+            args[i]=args[i].charAt(0).toUpperCase()+args[i].slice(1);
+            console.log(args[i]);
+            d=d+args[i]+" ";
+        }
+        d=d.trim();
         //checking whether the district provided by the user is a valid district or not
-        Districts.find({district_name:args[1]}, function(err,docs)
+        Districts.find({district_name:d}, function(err,docs)
         {
             if(docs.length)  //if record is empty, then the district name was invalid
             {
@@ -41,7 +42,7 @@ module.exports =
                     else
                     {
                         //creating a new user record with the details according to the arguments provided
-                        var user = new User({name:message.author.tag,age:args[0],district_id:dist,district_name:args[1],channel:message.channel.id});
+                        var user = new User({name:message.author.tag,age:args[0],district_id:dist,district_name:d,channel:message.channel.id});
 
                         //saving the new user to the USER collection
                         user.save(function(err,data)
