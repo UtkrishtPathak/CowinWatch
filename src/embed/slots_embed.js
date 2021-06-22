@@ -8,7 +8,7 @@ module.exports = {
         .addFields(
             {
                 name:`${slot.name}`,
-                value:`${slot.block_name}, PIN:${slot.pincode}.\n
+                value:`Block:${slot.block_name}, PIN:${slot.pincode}.\n
                 Vaccine: ${slot.sessions[0].vaccine}.\n Total ${slot.sessions[0].available_capacity} slots are available on ${today} 
                 (Dose 1: ${slot.sessions[0].available_capacity_dose1}, Dose 2: ${slot.sessions[0].available_capacity_dose2}).\n\n
                 COWIN: [https://selfregistration.cowin.gov.in/](https://selfregistration.cowin.gov.in/)`
